@@ -4,6 +4,11 @@ Here you'll find all the files available in our [flag icon set][1] and the tools
 
 If you have any comments, corrections or additions then let us know with an issue or pull request
 
+## Coming soon
+
+ * More flags
+ * Flag sprites along with accompanying CSS/SCSS/SASS and tools to generate them
+
 ## Building your own version of the icon set
 
 If you want to build your own version of this flag set, with any additions or modifications, just edit the files in `src/flags`. Each flag has its own folder, and inside each folder there is one PNG file for each size of the flag. Also in each folder is a file called `code`, which contains the ISO-3166-2 country code for the flag.

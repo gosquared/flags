@@ -6,14 +6,18 @@ OVERLAYDIR := src/overlays
 
 SIZES ?= 16 24 32 48 64
 
+# icns files don't support 24x24 or 64x64
 ICNS_SIZES := $(filter-out 24 64,$(SIZES))
 
 FLAGS := $(shell ls $(INDIR))
+
+NORMAL := $(filter-out $(SQUARE) $(NEPAL),$(FLAGS))
 SQUARE := $(filter Vatican-City Switzerland,$(FLAGS))
 NEPAL := $(filter Nepal,$(FLAGS))
-NORMAL := $(filter-out $(SQUARE) $(NEPAL),$(FLAGS))
 
 PNGCRUSH_OPTIONS ?= -q -brute -rem alla
+
+# temporary file prefix we'll use
 TMP_FILE := $(shell mktemp -u)
 PWD := $(shell pwd)
 
