@@ -11,9 +11,9 @@ ICNS_SIZES := $(filter-out 24 64,$(SIZES))
 
 FLAGS := $(shell ls $(INDIR))
 
-NORMAL := $(filter-out $(SQUARE) $(NEPAL),$(FLAGS))
 SQUARE := $(filter Vatican-City Switzerland,$(FLAGS))
 NEPAL := $(filter Nepal,$(FLAGS))
+NORMAL := $(filter-out $(SQUARE) $(NEPAL),$(FLAGS))
 
 PNGCRUSH_OPTIONS ?= -q -brute -rem alla
 
@@ -44,10 +44,8 @@ $3: $1
 	composite ${OVERLAYDIR}/$6/$7.png $$^ $8; $(copy_png) $8 $$@
 	@rm -f $8
 
-# flat iso
+# iso
 $(call copy_file,$4,$2)
-
-# shiny iso
 $(call copy_file,$5,$3)
 
 FLAG_FILES += $2 $3 $4 $5
@@ -55,29 +53,21 @@ endef
 
 
 define define_icon
-# flat normal
+# normal
 $1/flat/$5/$3.$5: $(addsuffix /$3.png,$(addprefix $1/flat/,$6))
-	@mkdir -p $$(@D)
-ifeq (ico,$5)
-	convert $$^ $$@
-else
-	png2icns $$@ $$^ > /dev/null
-endif
-
-# flat iso
-$(call copy_file,$2/flat/$5/$4.$5,$1/flat/$5/$3.$5)
-
-# shiny normal
 $1/shiny/$5/$3.$5: $(addsuffix /$3.png,$(addprefix $1/shiny/,$6))
+
+# iso
+$(call copy_file,$2/flat/$5/$4.$5,$1/flat/$5/$3.$5)
+$(call copy_file,$2/shiny/$5/$4.$5,$1/shiny/$5/$3.$5)
+
+$1/flat/$5/$3.$5 $1/shiny/$5/$3.$5:
 	@mkdir -p $$(@D)
 ifeq (ico,$5)
 	convert $$^ $$@
 else
 	png2icns $$@ $$^ > /dev/null
 endif
-
-# shiny iso
-$(call copy_file,$2/shiny/$5/$4.$5,$1/shiny/$5/$3.$5)
 
 FLAG_FILES += \
 	$1/flat/$5/$3.$5 \
@@ -87,7 +77,6 @@ FLAG_FILES += \
 endef
 
 define define_flag
-
 $(foreach size,${SIZES},\
 	$(call process_flag,\
 		${INDIR}/$1/$(size).png,\
