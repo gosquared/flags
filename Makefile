@@ -50,10 +50,7 @@ $(call copy_file,$4,$2)
 # shiny iso
 $(call copy_file,$5,$3)
 
-FLAG_FLAT_FILES += $2
-FLAG_SHINY_FILES += $3
-FLAG_ISO_FLAT_FILES += $4
-FLAG_ISO_SHINY_FILES += $5
+FLAG_FILES += $2 $3 $4 $5
 endef
 
 
@@ -82,10 +79,11 @@ endif
 # shiny iso
 $(call copy_file,$2/shiny/$5/$4.$5,$1/shiny/$5/$3.$5)
 
-FLAG_FLAT_FILES += $1/flat/$5/$3.$5
-FLAG_ISO_FLAT_FILES += $2/flat/$5/$4.$5
-FLAG_SHINY_FILES += $1/shiny/$5/$3.$5
-FLAG_ISO_SHINY_FILES += $2/shiny/$5/$4.$5
+FLAG_FILES += \
+	$1/flat/$5/$3.$5 \
+	$2/flat/$5/$4.$5 \
+	$1/shiny/$5/$3.$5 \
+	$2/shiny/$5/$4.$5
 endef
 
 define define_flag
@@ -119,10 +117,7 @@ $(foreach flag,${NEPAL}, \
 	$(eval $(call define_flag,$(flag),$(shell cat "${INDIR}/$(flag)/code"),nepal)))
 
 ZIPFILES = \
-	${FLAG_FLAT_FILES} \
-	${FLAG_SHINY_FILES} \
-	${FLAG_ISO_FLAT_FILES} \
-	${FLAG_ISO_SHINY_FILES} \
+	${FLAG_FILES} \
 	${OUTDIR}/LICENSE.txt \
 	${OUTDIR}/Hello.txt
 
