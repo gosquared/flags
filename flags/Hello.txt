@@ -1,7 +1,7 @@
 Flag Icons by GoSquared (http://www.gosquared.com/)
 
-Version: 2.3
-Last Updated: 26th January 2013
+Version: 2.4
+Last Updated: 2nd March 2013
 
 Usage:
   You're free to use this set for both personal and commercial projects
@@ -21,6 +21,13 @@ Contacting Us:
 
 
 Changelog:
+
+ * 2.4: 2nd March 2013
+     Added a couple more missing:
+       Basque Country
+       Martinique
+     Added "unknown"
+     Cleaned out some buggy files called ".png" that crept in somehow
 
  * 2.3: 26th January 2013
      Added more missing flags:
