@@ -1,7 +1,7 @@
 Flag Icons by GoSquared (http://www.gosquared.com/)
 
-Version: 2.2
-Last Updated: 29th October 2012
+Version: 2.3
+Last Updated: 26th January 2013
 
 Usage:
   You're free to use this set for both personal and commercial projects

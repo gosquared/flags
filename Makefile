@@ -117,7 +117,7 @@ flags.zip: ${OUTDIR} ${ZIPFILES}
 
 ${OUTDIR}: ${ZIPFILES}
 
-${OUTDIR}/%.txt:
+${OUTDIR}/%.txt: %.txt
 	cp $*.txt $@
 
 clean:
