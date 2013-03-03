@@ -1,7 +1,7 @@
 Flag Icons by GoSquared (http://www.gosquared.com/)
 
-Version: 2.4
-Last Updated: 2nd March 2013
+Version: 2.5
+Last Updated: 3rd March 2013
 
 Usage:
   You're free to use this set for both personal and commercial projects
@@ -21,6 +21,11 @@ Contacting Us:
 
 
 Changelog:
+
+ * 2.5: 3rd March 2013
+     Couple more missing flags:
+       Canary Islands
+       Curaçao
 
  * 2.4: 2nd March 2013
      Added a couple more missing:
