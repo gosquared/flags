@@ -23,7 +23,7 @@ To generate the full set, just run `make` (you may want to run `make clean` if y
 
  * GNU Make
  * imagemagick
- * png2icns (provided on Ubuntu by `icnsutils`, or [via soruceforge](http://icns.sourceforge.net/))
+ * png2icns (provided on Ubuntu by `icnsutils`, or [via sourceforge](http://icns.sourceforge.net/))
 
 
 [1]: https://www.gosquared.com/resources/flag-icons
