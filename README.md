@@ -11,7 +11,7 @@ If you have any comments, corrections or additions then let us know with an issu
 
 ## License and Usage
 
-MIT, see LICENSE.txt
+MIT, see [LICENSE.txt](https://github.com/gosquared/flags/blob/master/LICENSE.txt)
 
 ## Building your own version of the icon set
 
